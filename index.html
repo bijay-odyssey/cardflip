@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3D Card Gallery</title>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background: #1a1a1a;
+            margin: 0;
+            perspective: 1000px;
+        }
+
+        .card {
+            width: 300px;
+            height: 400px;
+            margin: 20px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .card-front {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: white;
+        }
+
+        .card-back {
+            background: linear-gradient(45deg, #4ecdc4, #88dac8);
+            transform: rotateY(180deg);
+            color: white;
+        }
+
+        h2, p {
+            text-align: center;
+            font-family: Arial;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: white;
+            color: #4ecdc4;
+            border-radius: 25px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-front">
+            <h2>Project Alpha</h2>
+            <p>Hover to reveal details</p>
+        </div>
+        <div class="card-back">
+            <h2>Details</h2>
+            <p>Advanced AI integration system with real-time analytics capabilities.</p>
+            <button>Learn More</button>
+        </div>
+    </div>
+    
+    <!-- Add more cards with different gradients -->
+</body>
+</html>
